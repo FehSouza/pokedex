@@ -8,11 +8,18 @@ export const GlobalStyles = css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: arial, san-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
     color: ${({ theme }) => theme.colors['text-black']};
     overflow: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
   }
 
   h1,
@@ -28,6 +35,7 @@ export const GlobalStyles = css`
     display: inline-block;
     font-size: 16px;
     font-weight: 400;
+    line-height: 19px;
     color: ${({ theme }) => theme.colors['text-black']};
   }
 
@@ -42,7 +50,26 @@ export const GlobalStyles = css`
     background-color: transparent;
     font-size: 16px;
     font-weight: 400;
+    line-height: 19px;
     color: ${({ theme }) => theme.colors['text-black']};
+  }
+
+  @media (max-width: 480px) {
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    button,
+    input,
+    textarea {
+      font-size: 14px;
+      line-height: 17px;
+    }
   }
 
   button:hover {
@@ -75,5 +102,20 @@ export const GlobalStyles = css`
 
   a:hover {
     cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors['background-pressed-input']};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors['background-modal']};
+    border: none;
   }
 `

@@ -1,0 +1,14 @@
+import styled from 'styled-components'
+
+export const Navbar = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  z-index: 1;
+`
+
+export const NavbarButton = styled.button`
+  height: 25px;
+  width: 25px;
+`
