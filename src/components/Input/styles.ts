@@ -40,3 +40,11 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.colors['text-grey']};
   }
 `
+
+export const Button = styled.button`
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

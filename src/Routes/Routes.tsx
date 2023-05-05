@@ -1,10 +1,28 @@
 import { Route, Routes } from 'react-router-dom'
-import { Home } from '../pages'
+import { About, Evolution, Home, Stats } from '../pages'
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route index element={<Home />} />
+      <Route path="/">
+        <Route index element={<Home />} />
+        <Route path=":search" element={<Home />} />
+
+        <Route path="/about">
+          <Route index element={<About />} />
+          <Route path=":id" element={<About />} />
+        </Route>
+
+        <Route path="/stats">
+          <Route index element={<Stats />} />
+          <Route path=":id" element={<Stats />} />
+        </Route>
+
+        <Route path="/evolution">
+          <Route index element={<Evolution />} />
+          <Route path=":id" element={<Evolution />} />
+        </Route>
+      </Route>
     </Routes>
   )
 }
