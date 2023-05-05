@@ -1,8 +1,8 @@
 import { PokemonProps } from '../@types'
 import { api } from '../api'
 
-export const getPokemonList = async () => {
-  const response = await api.get('pokemon/')
+export const getPokemonList = async (url: string) => {
+  const response = await api.get(url)
   const result = response.data.results
 
   return Promise.all(

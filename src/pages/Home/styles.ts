@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
-  padding: 40px;
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
   position: relative;
@@ -17,6 +15,7 @@ export const Title = styled.h1`
   line-height: 38px;
   text-align: left;
   z-index: 1;
+  padding: 0 40px;
 `
 
 export const Text = styled.span`
@@ -24,4 +23,5 @@ export const Text = styled.span`
   text-align: left;
   color: ${({ theme }) => theme.colors['text-grey']};
   z-index: 1;
+  padding: 0 40px;
 `

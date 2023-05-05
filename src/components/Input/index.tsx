@@ -9,10 +9,12 @@ interface InputProps {
 
 export const Input = ({ placeholder, mt, iconLeft, iconRight }: InputProps) => {
   return (
-    <S.Wrapper mt={mt}>
-      {iconLeft && iconLeft}
-      <S.Input placeholder={placeholder} />
-      {iconRight && iconRight}
-    </S.Wrapper>
+    <S.Container>
+      <S.Wrapper mt={mt}>
+        {iconLeft && iconLeft}
+        <S.Input placeholder={placeholder} />
+        {iconRight && iconRight}
+      </S.Wrapper>
+    </S.Container>
   )
 }

@@ -3,7 +3,6 @@ import { Color } from '../../styles/theme'
 
 export const PokemonCard = styled.li<{ color: Color }>`
   margin-top: 30px;
-  margin-right: 5px;
   display: flex;
   background-color: ${({ theme, color }) => `${theme.colors[color]}`};
   border-radius: 10px;

@@ -6,6 +6,8 @@ export const Navbar = styled.nav`
   justify-content: flex-end;
   gap: 20px;
   z-index: 1;
+  padding: 40px;
+  padding-bottom: 0;
 `
 
 export const NavbarButton = styled.button`
