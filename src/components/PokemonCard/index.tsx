@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { PokemonItemProps, Type2 } from '../../@types'
 import { ReactComponent as PatternIcon } from '../../assets/icons/6x3.svg'
 import { ReactComponent as Bug } from '../../assets/icons/bug.svg'
@@ -54,8 +55,11 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = ({ item }: PokemonCardProps) => {
+  const navigate = useNavigate()
+  const handleNavigate = (id: number) => navigate(`/about/${id}`)
+
   return (
-    <S.PokemonCard key={item.id} color={`background-type-${item.types[0].type.name}`}>
+    <S.PokemonCard key={item.id} color={`background-type-${item.types[0].type.name}`} onClick={() => handleNavigate(item.id)}>
       <S.InfoWrapper>
         <S.Id>{`#${String(item.id).padStart(3, '0')}`}</S.Id>
         <S.Name>{item.name}</S.Name>

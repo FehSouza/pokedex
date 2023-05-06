@@ -46,7 +46,7 @@ const baseTheme = {
     'gradient-pokeball-grey': 'linear-gradient(135deg, #ECECEC 0%, #F5F5F5 100%)',
     'gradient-vector-white': 'linear-gradient(100.84deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
     'gradient-pokeball-white': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)',
-    'gradient-pokemon-name': 'linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 76.04%)',
+    'gradient-pokemon-name': '#ffffff4D',
     'gradient-pokemon-circle': 'linear-gradient(334.58deg, rgba(255, 255, 255, 0.35) 16.24%, rgba(255, 255, 255, 0) 44.6%)',
     'text-white': '#FFFFFF',
     'text-black': '#17171B',

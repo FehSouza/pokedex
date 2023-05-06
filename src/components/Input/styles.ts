@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   padding: 0 40px;
+  z-index: 1;
 `
 
 export const Wrapper = styled.div<{ mt: number }>`
@@ -14,7 +15,6 @@ export const Wrapper = styled.div<{ mt: number }>`
   padding: 20px 25px;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors['background-default-input']};
-  z-index: 1;
   margin-top: ${({ mt }) => `${mt}px`};
   transition-duration: 350ms;
 
