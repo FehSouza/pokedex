@@ -12,3 +12,9 @@ export const getPokemonList = async (url: string) => {
     })
   )
 }
+
+export const getPokemon = async (url: string) => {
+  const response = await api.get(url)
+  const result = response.data
+  return result
+}

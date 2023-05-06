@@ -6,7 +6,6 @@ export const AppRoutes = () => {
     <Routes>
       <Route path="/">
         <Route index element={<Home />} />
-        <Route path=":search" element={<Home />} />
 
         <Route path="/about">
           <Route index element={<About />} />

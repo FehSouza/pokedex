@@ -1,43 +1,30 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
 
 interface InputProps {
   placeholder: string
+  value: string
   mt: number
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
+  onClick: () => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onKeyUp: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
-export const Input = ({ placeholder, mt, iconLeft, iconRight }: InputProps) => {
-  const navigate = useNavigate()
-  const [value, setValue] = useState('')
-
-  const navigation = () => {
-    if (!value) return
-    setValue('')
-    navigate(`/${value}`)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.currentTarget.value)
-
-  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') navigation()
-  }
-
+export const Input = ({ placeholder, value, mt, iconLeft, iconRight, onClick, onChange, onKeyUp }: InputProps) => {
   return (
     <S.Container>
       <S.Wrapper mt={mt}>
         {iconLeft && (
-          <S.Button aria-label="button-search" onClick={navigation}>
+          <S.Button aria-label="button-search" onClick={onClick}>
             {iconLeft}
           </S.Button>
         )}
 
-        <S.Input placeholder={placeholder} value={value} onChange={handleChange} onKeyUp={handleKeyUp} />
+        <S.Input placeholder={placeholder} value={value} onChange={onChange} onKeyUp={onKeyUp} />
 
         {iconRight && (
-          <S.Button aria-label="button-search" onClick={navigation}>
+          <S.Button aria-label="button-search" onClick={onClick}>
             {iconRight}
           </S.Button>
         )}
