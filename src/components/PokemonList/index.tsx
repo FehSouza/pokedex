@@ -17,7 +17,14 @@ export const PokemonList = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const search = searchParams.get('q')
   const { data: pokemonList, size, setSize } = useSWRInfinite(getKey, getPokemonList)
-  const { data: pokemon, isLoading, error } = useSWR(`/pokemon/${search}`, () => getPokemon(`/pokemon/${search}`))
+  const {
+    data: pokemon,
+    isLoading,
+    error,
+  } = useSWR(
+    () => (search ? `/pokemon/${search}` : null),
+    () => getPokemon(`/pokemon/${search}`)
+  )
 
   const handleScroll = (e: React.UIEvent<HTMLUListElement, UIEvent>) => {
     const cardSize = 150

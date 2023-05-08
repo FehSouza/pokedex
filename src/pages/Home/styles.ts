@@ -16,6 +16,8 @@ export const Title = styled.h1`
   text-align: left;
   z-index: 1;
   padding: 0 40px;
+  cursor: pointer;
+  width: fit-content;
 `
 
 export const Text = styled.span`

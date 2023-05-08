@@ -1,3 +1,4 @@
+import { lighten } from 'polished'
 import styled from 'styled-components'
 
 export const Button = styled.button<{ mt: number; select: boolean }>`
@@ -9,4 +10,9 @@ export const Button = styled.button<{ mt: number; select: boolean }>`
   background-color: ${({ theme, select }) => theme.colors[select ? 'type-psychic' : 'background-default-input']};
   box-shadow: ${({ select }) => select && `0px 10px 20px 0px #EA5D604D`};
   color: ${({ theme, select }) => theme.colors[select ? 'text-white' : 'text-grey']};
+  transition-duration: 350ms;
+
+  &:hover {
+    background-color: ${({ theme, select }) => lighten(0.03, `${theme.colors[select ? 'type-psychic' : 'background-default-input']}`)};
+  }
 `

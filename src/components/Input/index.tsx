@@ -1,4 +1,5 @@
 import * as S from './styles'
+import { forwardRef } from 'react'
 
 interface InputProps {
   placeholder: string
@@ -11,24 +12,26 @@ interface InputProps {
   onKeyUp: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
-export const Input = ({ placeholder, value, mt, iconLeft, iconRight, onClick, onChange, onKeyUp }: InputProps) => {
-  return (
-    <S.Container>
-      <S.Wrapper mt={mt}>
-        {iconLeft && (
-          <S.Button aria-label="button-search" onClick={onClick}>
-            {iconLeft}
-          </S.Button>
-        )}
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ placeholder, value, mt, iconLeft, iconRight, onClick, onChange, onKeyUp }, ref) => {
+    return (
+      <S.Container>
+        <S.Wrapper mt={mt}>
+          {iconLeft && (
+            <S.Button aria-label="button-search" onClick={onClick}>
+              {iconLeft}
+            </S.Button>
+          )}
 
-        <S.Input placeholder={placeholder} value={value} onChange={onChange} onKeyUp={onKeyUp} />
+          <S.Input ref={ref} placeholder={placeholder} value={value} onChange={onChange} onKeyUp={onKeyUp} />
 
-        {iconRight && (
-          <S.Button aria-label="button-search" onClick={onClick}>
-            {iconRight}
-          </S.Button>
-        )}
-      </S.Wrapper>
-    </S.Container>
-  )
-}
+          {iconRight && (
+            <S.Button aria-label="button-search" onClick={onClick}>
+              {iconRight}
+            </S.Button>
+          )}
+        </S.Wrapper>
+      </S.Container>
+    )
+  }
+)

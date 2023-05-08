@@ -1,12 +1,14 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const Logo = styled.div`
+export const Logo = styled(motion.div)<{ menu?: boolean }>`
   position: absolute;
   left: 0;
   top: 0;
-  transform: translateY(-50%);
+  transform: ${({ menu }) => (menu ? 'translateY(1)' : 'translateY(-50%)')};
   width: 100%;
   z-index: 0;
+  opacity: ${({ menu }) => (menu ? '0.4 !important' : '1')};
 
   & svg {
     width: 100%;

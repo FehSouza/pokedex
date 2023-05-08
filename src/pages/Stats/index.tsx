@@ -1,3 +1,9 @@
+import * as S from './styles'
+
 export const Stats = () => {
-  return <span>STATS</span>
+  return (
+    <S.Container>
+      <span>Stats</span>
+    </S.Container>
+  )
 }
