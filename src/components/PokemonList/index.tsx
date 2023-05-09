@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
 import useSWR from 'swr'
 import useSWRInfinite from 'swr/infinite'
-import { Button, NotFound, PokemonCard, PokemonCardSkeleton } from '..'
+import { Button, NotFound, PokemonCardHome, PokemonCardSkeleton } from '..'
 import { PokemonItemProps } from '../../@types'
 import { getPokemon, getPokemonList } from '../../services'
 import * as S from './styles'
@@ -42,13 +42,13 @@ export const PokemonList = () => {
   return (
     <S.PokemonList onScroll={(e) => handleScroll(e)}>
       {!pokemonList && repeat.map((key) => <PokemonCardSkeleton key={key} />)}
-      {!search && pokemonList && pokemonList.map((list) => list.map((cardInfo) => <PokemonCard key={cardInfo.id} item={cardInfo} />))}
+      {!search && pokemonList && pokemonList.map((list) => list.map((cardInfo) => <PokemonCardHome key={cardInfo.id} item={cardInfo} />))}
 
       {search && isLoading && <PokemonCardSkeleton key={0} />}
       {search && error && <NotFound onClick={handleNavigateHome} />}
       {search && pokemon && (
         <>
-          <PokemonCard key={pokemon.id} item={pokemon} />
+          <PokemonCardHome key={pokemon.id} item={pokemon} />
           <Button text="Back to all Pokemon" mt={45} select={false} nameButton="Back to home" onClick={handleNavigateHome} />
         </>
       )}

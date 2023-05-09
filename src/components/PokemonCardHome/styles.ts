@@ -4,44 +4,31 @@ import { Color } from '../../styles/theme'
 
 export const PokemonCard = styled(motion.li)<{ color: Color }>`
   display: flex;
-  margin-top: 95px;
-  padding: 0 40px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: ${({ theme, color }) => theme.colors[color]};
   position: relative;
   cursor: pointer;
   opacity: 1 !important;
 `
 
-export const ImageWrapper = styled.div`
-  height: 125px;
-  aspect-ratio: 1/1;
-`
-
-export const Image = styled(motion.img)`
-  height: 100%;
-`
-
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 25px;
-
-  @media (max-width: 400px) {
-    margin-left: 16px;
-  }
 `
 
 export const Id = styled(motion.span)`
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 19px;
+  line-height: 14px;
   color: ${({ theme }) => theme.colors['text-number']};
 `
 
 export const Name = styled(motion.h2)`
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
-  line-height: 38px;
+  line-height: 31px;
   color: ${({ theme }) => theme.colors['text-white']};
   text-transform: capitalize;
   margin-top: 5px;
@@ -66,7 +53,7 @@ export const Type = styled(motion.div)<{ color: Color }>`
   padding: 5px;
   background-color: ${({ theme, color }) => theme.colors[color]};
   border-radius: 3px;
-  z-index: 2;
+  z-index: 3;
 
   svg {
     width: 15px;
@@ -85,12 +72,25 @@ export const TypeName = styled.span`
   text-transform: capitalize;
 `
 
+export const ImageWrapper = styled.div`
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  height: calc(100% + 15px);
+  aspect-ratio: 1/1;
+  z-index: 2;
+`
+
+export const Image = styled(motion.img)`
+  height: 100%;
+`
+
 export const ShadowWrapper = styled(motion.div)`
   width: 74px;
   height: 32px;
   position: absolute;
-  top: 96px;
-  right: -16px;
+  top: 5px;
+  left: 100px;
 
   svg {
     width: 100%;
@@ -108,4 +108,28 @@ export const Shadow = styled.div<{ color: Color }>`
   height: 100%;
   background: linear-gradient(${({ color, theme }) => `transparent, ${theme.colors[color]}`});
   z-index: 1;
+`
+
+export const LogoWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 10px;
+  padding-left: 30px;
+  z-index: 1;
+
+  svg {
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+
+    path {
+      fill: ${({ theme }) => theme.colors['gradient-vector']};
+    }
+  }
 `

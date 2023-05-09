@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@honkhonk/vite-plugin-svgr": "^1.1.0",
+    "@raulpesilva/re-state": "^1.2.32",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.8",

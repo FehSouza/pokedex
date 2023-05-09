@@ -183,7 +183,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.19.0"
 
-"@babel/runtime@^7.17.8":
+"@babel/runtime@^7.17.2", "@babel/runtime@^7.17.8":
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
   integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
@@ -483,6 +483,13 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@raulpesilva/re-state@^1.2.32":
+  version "1.2.32"
+  resolved "https://registry.yarnpkg.com/@raulpesilva/re-state/-/re-state-1.2.32.tgz#03241577b587d7d209c02f2c79bf09dcf1e105b7"
+  integrity sha512-Hqko4WmjMWQWH6HX7DaS6aQv7FsVePPIQLfH2BKY0O825U2NV4Hey4I8CsZiIB1OZ9TESMNklx+zT8q15D0Lpg==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 "@remix-run/router@1.6.0":
   version "1.6.0"

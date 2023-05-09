@@ -6,5 +6,6 @@ export const PokemonList = styled.ul`
   z-index: 1;
   padding: 40px;
   padding-top: 0;
+  overflow-x: hidden;
 `
 
