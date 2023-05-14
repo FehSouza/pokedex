@@ -2,20 +2,22 @@ import styled from 'styled-components'
 import { Color } from '../../styles/theme'
 import { motion } from 'framer-motion'
 
-export const Container = styled.div`
+export const Container = styled.div<{ fixedHeader: boolean }>`
   width: 100%;
   height: 100%;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: ${({ fixedHeader }) => (fixedHeader ? 'hidden' : 'auto')};
 `
 
-export const Header = styled(motion.header)<{ color: Color }>`
+export const Header = styled(motion.header)<{ color: Color; fixedHeader: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 315px;
+  height: ${({ fixedHeader }) => (fixedHeader ? '155px' : '315px')};
   padding-bottom: 30px;
   background-color: ${({ theme, color }) => theme.colors[color]};
-  position: relative;
+  position: ${({ fixedHeader }) => (fixedHeader ? 'fixed' : 'relative')};
   overflow: hidden;
 `
 
@@ -176,29 +178,4 @@ export const LogoWrapper = styled.div`
       fill: ${({ theme }) => theme.colors['gradient-vector']};
     }
   }
-`
-
-export const Menu = styled.nav`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0 19px;
-  box-sizing: border-box;
-  position: absolute;
-  bottom: -20px;
-`
-
-export const MenuItem = styled.button<{ active: boolean }>`
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  padding-top: 16px;
-  font-size: 16px;
-  font-weight: ${({ active }) => (active ? '700' : '400')};
-  line-height: 19px;
-  color: ${({ theme }) => theme.colors['text-white']};
-  text-transform: capitalize;
-  opacity: ${({ active }) => (active ? '1' : '0.5')};
-  position: relative;
 `

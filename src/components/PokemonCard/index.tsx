@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import { PokemonCardProps, icons } from '..'
 import { ReactComponent as PatternIcon } from '../../assets/icons/6x3.svg'
+import { useFixedHeader } from '../../states'
 import * as S from './styles'
 
 export const PokemonCard = ({ item }: PokemonCardProps) => {
+  const [fixedHeader] = useFixedHeader()
   const navigate = useNavigate()
   const handleNavigate = (id: number) => navigate(`/about/${id}`)
 
@@ -13,33 +15,44 @@ export const PokemonCard = ({ item }: PokemonCardProps) => {
       onClick={() => handleNavigate(item.id)}
       color={`background-type-${item.types[0].type.name}`}
       layoutId={`bg-${item.id}`}
+      fixedHeader={fixedHeader}
     >
-      <S.ImageWrapper>
-        <S.Image src={item.sprites.other['official-artwork'].front_default} alt="" layoutId={`img-${item.id}`} />
-      </S.ImageWrapper>
+      {fixedHeader && (
+        <S.WrapperName>
+          <S.Name layoutId={`name-${item.id}`}>{item.name}</S.Name>
+        </S.WrapperName>
+      )}
 
-      <S.InfoWrapper>
-        <S.Id layoutId={`id-${item.id}`}>{`#${String(item.id).padStart(3, '0')}`}</S.Id>
-        <S.Name layoutId={`name-${item.id}`}>{item.name}</S.Name>
+      {!fixedHeader && (
+        <>
+          <S.ImageWrapper>
+            <S.Image src={item.sprites.other['official-artwork'].front_default} alt="" layoutId={`img-${item.id}`} />
+          </S.ImageWrapper>
 
-        <S.TypesWrapper>
-          {item.types.map((elem) => {
-            const Icon = icons[elem.type.name]
+          <S.InfoWrapper>
+            <S.Id layoutId={`id-${item.id}`}>{`#${String(item.id).padStart(3, '0')}`}</S.Id>
+            <S.Name layoutId={`name-${item.id}`}>{item.name}</S.Name>
 
-            return (
-              <S.Type layoutId={`type-${item.id}-${elem.type.name}`} key={elem.type.name} color={`type-${elem.type.name}`}>
-                <Icon />
-                <S.TypeName>{elem.type.name}</S.TypeName>
-              </S.Type>
-            )
-          })}
-        </S.TypesWrapper>
-      </S.InfoWrapper>
+            <S.TypesWrapper>
+              {item.types.map((elem) => {
+                const Icon = icons[elem.type.name]
 
-      <S.ShadowWrapper layoutId={`icon-${item.id}`}>
-        <S.Shadow color={`background-type-${item.types[0].type.name}`} />
-        <PatternIcon />
-      </S.ShadowWrapper>
+                return (
+                  <S.Type layoutId={`type-${item.id}-${elem.type.name}`} key={elem.type.name} color={`type-${elem.type.name}`}>
+                    <Icon />
+                    <S.TypeName>{elem.type.name}</S.TypeName>
+                  </S.Type>
+                )
+              })}
+            </S.TypesWrapper>
+          </S.InfoWrapper>
+
+          <S.ShadowWrapper layoutId={`icon-${item.id}`}>
+            <S.Shadow color={`background-type-${item.types[0].type.name}`} />
+            <PatternIcon />
+          </S.ShadowWrapper>
+        </>
+      )}
     </S.PokemonCard>
   )
 }

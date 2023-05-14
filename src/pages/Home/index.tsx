@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg'
-import { Input, Logo, Navbar, PokemonList } from '../../components'
+import { Input, Logo, NavbarFilters, PokemonList } from '../../components'
 import * as S from './styles'
 
 export const Home = () => {
@@ -28,7 +28,7 @@ export const Home = () => {
   return (
     <S.Container>
       <Logo />
-      <Navbar />
+      <NavbarFilters />
       <S.Title onClick={handleNavigateHome}>Pokédex</S.Title>
       <S.Text>Search for Pokémon by name or using the National Pokédex number.</S.Text>
       <Input

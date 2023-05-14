@@ -2,13 +2,34 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { Color } from '../../styles/theme'
 
-export const PokemonCard = styled(motion.li)<{ color: Color }>`
+export const PokemonCard = styled(motion.li)<{ color: Color; fixedHeader: boolean }>`
   display: flex;
-  margin-top: 95px;
+  margin-top: ${({ fixedHeader }) => (fixedHeader ? '32px' : '95px')};
   padding: 0 40px;
   position: relative;
   cursor: pointer;
   opacity: 1 !important;
+`
+
+export const WrapperName = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+export const Name = styled(motion.h2)`
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  color: ${({ theme }) => theme.colors['text-white']};
+  text-transform: capitalize;
+  margin-top: 5px;
+  z-index: 3;
+
+  @media (max-width: 400px) {
+    font-size: 26px;
+    line-height: 31px;
+  }
 `
 
 export const ImageWrapper = styled.div`
@@ -36,21 +57,6 @@ export const Id = styled(motion.span)`
   font-weight: 700;
   line-height: 19px;
   color: ${({ theme }) => theme.colors['text-number']};
-`
-
-export const Name = styled(motion.h2)`
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 38px;
-  color: ${({ theme }) => theme.colors['text-white']};
-  text-transform: capitalize;
-  margin-top: 5px;
-  z-index: 3;
-
-  @media (max-width: 400px) {
-    font-size: 26px;
-    line-height: 31px;
-  }
 `
 
 export const TypesWrapper = styled.div`

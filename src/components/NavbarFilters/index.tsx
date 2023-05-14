@@ -4,9 +4,9 @@ import { ReactComponent as SortIcon } from '../../assets/icons/sort.svg'
 
 import * as S from './styles'
 
-export const Navbar = () => {
+export const NavbarFilters = () => {
   return (
-    <S.Navbar>
+    <S.Container>
       <S.NavbarButton aria-label="generation-button">
         <GenerationIcon />
       </S.NavbarButton>
@@ -18,6 +18,6 @@ export const Navbar = () => {
       <S.NavbarButton aria-label="filter-button">
         <FilterIcon />
       </S.NavbarButton>
-    </S.Navbar>
+    </S.Container>
   )
 }

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Container } from '../components'
+import { ContainerInformation as ContainerInformation } from '../components'
 import { About, Evolution, Home, Stats } from '../pages'
 
 export const AppRoutes = () => {
@@ -8,7 +8,7 @@ export const AppRoutes = () => {
       <Route path="/">
         <Route index element={<Home />} />
 
-        <Route path="/" element={<Container />}>
+        <Route path="/" element={<ContainerInformation />}>
           <Route path="/about">
             <Route index element={<About />} />
             <Route path=":id" element={<About />} />

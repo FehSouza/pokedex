@@ -1,3 +1,5 @@
+import { dispatchFixedHeader, useFixedHeader } from '../../states'
+import { handleScroll } from '../../utils'
 import * as S from './styles'
 
 const variants = {
@@ -8,8 +10,61 @@ const variants = {
 const transition = { duration: 0.35 } as const
 
 export const About = () => {
+  const [fixedHeader] = useFixedHeader()
+
   return (
-    <S.Container layoutId="container-page" layout variants={variants} initial="initial" animate="animate" transition={transition}>
+    <S.Container
+      layout
+      layoutId="container-page"
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      transition={transition}
+      fixedHeader={fixedHeader}
+      onScroll={(e) => handleScroll({ e, fixedHeader, dispatchFixedHeader })}
+    >
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
+      <span>About</span>
       <span>About</span>
       <span>About</span>
       <span>About</span>
