@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 import useSWR from 'swr'
 import useSWRInfinite from 'swr/infinite'
 import { Button, NotFound, PokemonCardHome, PokemonCardSkeleton } from '..'
-import { PokemonItemProps } from '../../@types'
+import { PokemonItemProps } from '../../@types/PokemonItem'
 import { getPokemon, getPokemonList } from '../../services'
 import * as S from './styles'
 

@@ -1,4 +1,5 @@
-import { PokemonItemProps, PokemonProps } from '../@types'
+import { PokemonItemProps, PokemonProps } from '../@types/PokemonItem'
+import { SpeciesProps } from '../@types/Species'
 import { api } from '../api'
 
 export const getPokemonList = async (url: string) => {
@@ -14,6 +15,12 @@ export const getPokemonList = async (url: string) => {
 }
 
 export const getPokemon = async (url: string): Promise<PokemonItemProps> => {
+  const response = await api.get(url)
+  const result = response.data
+  return result
+}
+
+export const getSpecies = async (url: string): Promise<SpeciesProps> => {
   const response = await api.get(url)
   const result = response.data
   return result

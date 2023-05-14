@@ -1,6 +1,6 @@
 import { useLocation, useMatch, useNavigate, useParams } from 'react-router-dom'
 import { Pokeball } from '..'
-import { PokemonItemProps } from '../../@types'
+import { PokemonItemProps } from '../../@types/PokemonItem'
 import * as S from './styles'
 
 interface NavbarPagesProps {

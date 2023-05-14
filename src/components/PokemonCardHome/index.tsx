@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useSWRConfig } from 'swr'
-import { PokemonItemProps, Type2 } from '../../@types'
+import { PokemonItemProps, Type2 } from '../../@types/PokemonItem'
 import { ReactComponent as PatternIcon } from '../../assets/icons/6x3.svg'
 import { ReactComponent as Bug } from '../../assets/icons/bug.svg'
 import { ReactComponent as Dark } from '../../assets/icons/dark.svg'
