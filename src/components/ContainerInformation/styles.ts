@@ -2,22 +2,21 @@ import styled from 'styled-components'
 import { Color } from '../../styles/theme'
 import { motion } from 'framer-motion'
 
-export const Container = styled.div<{ fixedHeader: boolean }>`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: ${({ fixedHeader }) => (fixedHeader ? 'hidden' : 'auto')};
+  overflow: hidden;
 `
 
-export const Header = styled(motion.header)<{ color: Color; fixedHeader: boolean }>`
+export const Header = styled(motion.header)<{ color: Color }>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: ${({ fixedHeader }) => (fixedHeader ? '155px' : '315px')};
+  height: 315px;
   padding-bottom: 30px;
   background-color: ${({ theme, color }) => theme.colors[color]};
-  position: ${({ fixedHeader }) => (fixedHeader ? 'fixed' : 'relative')};
+  position: relative;
   overflow: hidden;
 `
 
