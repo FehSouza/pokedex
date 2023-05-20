@@ -25,14 +25,9 @@ export interface PokemonItemProps {
 }
 
 export interface Ability {
-  ability: Ability2
+  ability: Ability
   is_hidden: boolean
   slot: number
-}
-
-export interface Ability2 {
-  name: string
-  url: string
 }
 
 export interface Form {
@@ -62,12 +57,7 @@ export interface Item {
 
 export interface VersionDetail {
   rarity: number
-  version: Version2
-}
-
-export interface Version2 {
-  name: string
-  url: string
+  version: Version
 }
 
 export interface Mfe {
@@ -332,12 +322,7 @@ export interface UltraSunUltraMoon {
 }
 
 export interface GenerationViii {
-  icons: Icons2
-}
-
-export interface Icons2 {
-  front_default: string
-  front_female: any
+  icons: Icons
 }
 
 export interface Stat {

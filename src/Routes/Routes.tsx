@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { ContainerInformation as ContainerInformation } from '../components'
+import { ContainerInformation } from '../components'
 import { About, Evolution, Home, Stats } from '../pages'
 
 export const AppRoutes = () => {

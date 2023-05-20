@@ -44,6 +44,8 @@ export const Stats = () => {
             <S.InfoName>Total</S.InfoName>
             <S.Info style={{ fontWeight: '700' }}>{totalBaseStats}</S.Info>
           </S.Wrapper>
+
+          <S.Observation>The ranges shown on the right are for a level 100 Pokémon.</S.Observation>
         </S.Content>
       )}
     </S.Container>

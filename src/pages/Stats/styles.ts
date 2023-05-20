@@ -66,8 +66,18 @@ export const Status = styled.div`
 `
 
 export const StatusInt = styled.div<{ color: Color; value: number }>`
-  width: ${({ value }) => `calc((100% * ${value}) / 250)`};
+  width: ${({ value }) => `calc((100% * ${value}) / 200)`};
   height: 100%;
   border-radius: 2px;
   background-color: ${({ theme, color }) => theme.colors[color]};
+`
+
+export const Observation = styled.p`
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: ${({ theme }) => theme.colors['text-grey']};
 `

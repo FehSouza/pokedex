@@ -60,12 +60,7 @@ export interface Version {
 
 export interface Genera {
   genus: string
-  language: Language2
-}
-
-export interface Language2 {
-  name: string
-  url: string
+  language: Language
 }
 
 export interface Generation {
@@ -84,13 +79,8 @@ export interface Habitat {
 }
 
 export interface Name {
-  language: Language3
+  language: Language
   name: string
-}
-
-export interface Language3 {
-  name: string
-  url: string
 }
 
 export interface PalParkEncounter {

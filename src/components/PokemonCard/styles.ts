@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { Color } from '../../styles/theme'
 
-export const PokemonCard = styled(motion.li)<{ color: Color; fixedHeader: boolean }>`
+export const PokemonCard = styled(motion.li)<{ color: Color }>`
   display: flex;
-  margin-top: ${({ fixedHeader }) => (fixedHeader ? '32px' : '95px')};
+  margin-top: 95px;
   padding: 0 40px;
   position: relative;
   cursor: pointer;

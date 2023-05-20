@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import useSWR from 'swr'
 import useSWRInfinite from 'swr/infinite'
@@ -13,7 +14,10 @@ const getKey = (page: number, previousPage: PokemonItemProps[]) => {
 
 const repeat = new Array(20).fill(null).map((_, i) => i + 1)
 
+let lastScrollPosition = 0
+
 export const PokemonList = () => {
+  const listRef = useRef<HTMLUListElement>(null)
   const [searchParams, setSearchParams] = useSearchParams()
   const search = searchParams.get('q')
   const { data: pokemonList, size, setSize } = useSWRInfinite(getKey, getPokemonList)
@@ -29,7 +33,9 @@ export const PokemonList = () => {
   const handleScroll = (e: React.UIEvent<HTMLUListElement, UIEvent>) => {
     const cardSize = 150
     const cardsPerRequest = cardSize * 20
-    const cardsRemaining = cardSize * 6
+    const cardsRemaining = cardSize * 8
+
+    lastScrollPosition = e.currentTarget.scrollTop
 
     if (e.currentTarget.scrollTop >= cardsPerRequest * size - cardsRemaining) {
       setSize(size + 1)
@@ -39,8 +45,10 @@ export const PokemonList = () => {
 
   const handleNavigateHome = () => setSearchParams('')
 
+  useEffect(() => listRef.current?.scrollTo({ top: lastScrollPosition }), [])
+
   return (
-    <S.PokemonList onScroll={(e) => handleScroll(e)}>
+    <S.PokemonList onScroll={(e) => handleScroll(e)} ref={listRef}>
       {!pokemonList && repeat.map((key) => <PokemonCardSkeleton key={key} />)}
       {!search && pokemonList && pokemonList.map((list) => list.map((cardInfo) => <PokemonCardHome key={cardInfo.id} item={cardInfo} />))}
 

@@ -41,7 +41,7 @@ const baseTheme = {
     'background-pressed-input': '#E2E2E2',
     'background-modal': '#17171B80',
     'gradient-vector': '#ffffff4D',
-    'gradient-pokeball': '#f5f5f580',
+    'gradient-pokeball': '#f5f5f5D9',
     'gradient-vector-grey': 'linear-gradient(100.59deg, #E5E5E5 0%, rgba(245, 245, 245, 0) 100%)',
     'gradient-pokeball-grey': 'linear-gradient(135deg, #ECECEC 0%, #F5F5F5 100%)',
     'gradient-vector-white': 'linear-gradient(100.84deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
