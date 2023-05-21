@@ -67,12 +67,7 @@ export const PokemonCardHome = ({ item }: PokemonCardProps) => {
   }
 
   return (
-    <S.PokemonCard
-      key={item.id}
-      onClick={() => handleNavigate(item.id)}
-      color={`background-type-${item.types[0].type.name}`}
-      layoutId={`bg-${item.id}`}
-    >
+    <S.PokemonCard key={item.id} onClick={() => handleNavigate(item.id)} color={`background-type-${item.types[0].type.name}`}>
       <S.InfoWrapper>
         <S.Id layoutId={`id-${item.id}`}>{`#${String(item.id).padStart(3, '0')}`}</S.Id>
         <S.Name layoutId={`name-${item.id}`}>{item.name}</S.Name>

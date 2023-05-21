@@ -11,12 +11,12 @@ export const ContainerInformation = () => {
 
   const { data: pokemon } = useSWR(`/pokemon/${params.id}`, () => getPokemon(`/pokemon/${params.id}`))
 
-  const handleNavigateHome = () => (window.history.length <= 2 ? navigate('/') : navigate(-1))
+  const handleNavigateHome = () => navigate('/')
 
   return (
     <S.Container>
       {pokemon && (
-        <S.Header layoutId={`bg-${pokemon.id}`} color={`background-type-${pokemon.types[0].type.name}`}>
+        <S.Header color={`background-type-${pokemon.types[0].type.name}`}>
           <S.BackHome name="Back to all Pokemon" onClick={handleNavigateHome}>
             <BsArrowLeftShort size={40} />
           </S.BackHome>
